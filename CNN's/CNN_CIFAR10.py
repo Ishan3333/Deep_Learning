@@ -95,19 +95,3 @@ stopper = EarlyStopping(monitor='val_loss', patience=VALIDATION_PATIENCE, restor
 
 # TRAINS THE MODEL ON TRAINING DATA BATCH-BY-BATCH
 classifier.fit(X_train, y_train, batch_size=batch_size, callbacks=[stopper], validation_data=(X_test, y_test), epochs=epochs, shuffle= True)
-
-# EVALUATION OF THE CREATED MODEL
-score = classifier.evaluate(X_test, y_test, verbose=0)
-print ('test_loss:', score[0])
-print ('test_acc:', score[1])
-
-# PLOTTING OUT THE GRAPH OF VARIOUS LOSSES AND MODEL ACCURACY TO THE NUMBER OF EPOCHS
-plt.figure()
-plt.plot(classifier.history['loss'], label="train_loss")
-plt.plot(classifier.history['val_loss'], label="val_loss")
-plt.plot(classifier.history["acc"], label="train_acc")
-plt.plot(classifier.history["val_acc"], label="val_acc")
-plt.xlabel("Epoch #")
-plt.ylabel("Loss/Accuracy")
-plt.legend()
-plt.show()
