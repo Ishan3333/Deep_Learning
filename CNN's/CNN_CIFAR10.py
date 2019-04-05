@@ -82,7 +82,7 @@ classifier.add(Dense(units = 10, activation = 'softmax'))
 # DECLARING NUMBER OF EPOCH AND THE BATCH SIZE
 epochs = 10000
 batch_size = 128
-VALIDATION_PATIENCE = 20
+VALIDATION_PATIENCE = 3
 
 # COMPILING THE FINAL CREATED MODEL WITH AN OPTIMIZER, LOSS FUNCTION AND EVALUATION METRICS
 classifier.compile(optimizer = 'rmsprop', loss = 'categorical_crossentropy', metrics = ['accuracy'])
@@ -91,7 +91,7 @@ classifier.compile(optimizer = 'rmsprop', loss = 'categorical_crossentropy', met
 IMPLEMENTING A CONVERGENCE MONITOR SO THE THE MODEL AUTOMATICALLY STOPS THE ITERATION
 AS SOON AS THE CONVERGENCE IS ACHIEVED
 '''
-stopper = EarlyStopping(monitor='val_loss', patience=VALIDATION_PATIENCE)
+stopper = EarlyStopping(monitor='val_loss', patience=VALIDATION_PATIENCE, restore_best_weights = True)
 
 # TRAINS THE MODEL ON TRAINING DATA BATCH-BY-BATCH
 classifier.fit(X_train, y_train, batch_size=batch_size, callbacks=[stopper], validation_data=(X_test, y_test), epochs=epochs, shuffle= True)
