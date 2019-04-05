@@ -123,14 +123,3 @@ classifier.fit_generator(
 	validation_steps=2000,
 	use_multiprocessing = True
 	)
-
-# PLOTTING OUT THE GRAPH OF VARIOUS LOSSES AND MODEL ACCURACY TO THE NUMBER OF EPOCHS
-plt.figure()
-plt.plot(classifier.history['loss'], label="train_loss")
-plt.plot(classifier.history['val_loss'], label="val_loss")
-plt.plot(classifier.history["acc"], label="train_acc")
-plt.plot(classifier.history["val_acc"], label="val_acc")
-plt.xlabel("Epoch #")
-plt.ylabel("Loss/Accuracy")
-plt.legend()
-plt.show()
