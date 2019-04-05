@@ -1,7 +1,6 @@
 # IMPORTING ALL THE NECESSARY LIBRARIES
 import pandas as pd
 
-from keras.utils import np_utils
 from keras.models import Sequential
 from keras.layers  import Dense, Dropout
 
