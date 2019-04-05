@@ -20,7 +20,7 @@ X_test = X_test.reshape(X_test.shape[0], 28, 28, 1)
 
 # NORMALIZING INPUTS FROM 0-255 TO 0.0-1.0
 X_train = X_train.astype('float32')
-X_test = X_train.astype('float32')
+X_test = X_test.astype('float32')
 X_train /= 255
 X_test /= 255
 
