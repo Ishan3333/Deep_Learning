@@ -77,21 +77,4 @@ classifier.add(Dense(units = 10, activation = 'softmax'))
 classifier.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 
 # TRAINS THE MODEL ON TRAINING DATA BATCH-BY-BATCH
-classifier.fit(X_train, y_train, batch_size=32, epochs=10, verbose=1)
-
-# EVALUATION OF THE CREATED MODEL
-score = classifier.evaluate(X_test, y_test, verbose=0)
-print ('test_loss:', score[0])
-print ('test_acc:', score[1])
-
-
-# PLOTTING OUT THE GRAPH OF VARIOUS LOSSES AND MODEL ACCURACY TO THE NUMBER OF EPOCHS
-plt.figure()
-plt.plot(classifier.history['loss'], label="train_loss")
-plt.plot(classifier.history['val_loss'], label="val_loss")
-plt.plot(classifier.history["acc"], label="train_acc")
-plt.plot(classifier.history["val_acc"], label="val_acc")
-plt.xlabel("Epoch #")
-plt.ylabel("Loss/Accuracy")
-plt.legend()
-plt.show()
+classifier.fit(X_train, y_train, batch_size=32, epochs=10, verbose=1, validation_data = (X_test, y_test))
