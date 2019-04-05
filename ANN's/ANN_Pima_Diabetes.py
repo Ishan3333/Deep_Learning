@@ -1,5 +1,4 @@
 # IMPORTING ALL THE NECESSARY LIBRARIES
-import numpy as np
 import pandas as pd
 
 from keras.utils import np_utils
