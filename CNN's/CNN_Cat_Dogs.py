@@ -93,10 +93,6 @@ train_datagen = ImageDataGenerator(
 	horizontal_flip=True,
 	vertical_flip = True
 	)
-
-# CREATING AN "ImageDataGenerator" INSTANCE THAT WILL RESCALE THE DATA
-test_datagen = ImageDataGenerator(rescale=1./255)
-
 # CREATING A TRAINING DATASET
 training_set = train_datagen.flow_from_directory(
 	'../dataset/training_set',
@@ -105,6 +101,10 @@ training_set = train_datagen.flow_from_directory(
 	class_mode='binary'
 	)
 
+
+# CREATING AN "ImageDataGenerator" INSTANCE THAT WILL RESCALE THE DATA
+test_datagen = ImageDataGenerator(rescale=1./255)
+
 # CREATING A TESTING DATASET
 test_set = test_datagen.flow_from_directory(
 	'../dataset/test_set',
@@ -112,6 +112,7 @@ test_set = test_datagen.flow_from_directory(
 	batch_size=32,
 	class_mode='binary'
 	)
+
 
 # TRAINS THE MODEL ON DATA GENERATED BATCH-BY-BATCH
 classifier.fit_generator(
