@@ -42,7 +42,7 @@ model.add(Dropout(0.20))
 model.add(Dense(units = 1, activation = 'linear'))
 
 # COMPILING THE FINAL CREATED MODEL WITH AN OPTIMIZER, LOSS FUNCTION AND EVALUATION METRICS
-model.compile(loss='mean_squared_error', optimizer='adam', 	metrics = ['mae'])
+model.compile(loss='mean_squared_error', optimizer='adam', metrics = ['mae'])
 
 # TRAINS THE MODEL ON TRAINING DATA BATCH-BY-BATCH 
 model.fit(X, Y, epochs = 100, verbose = 0)
