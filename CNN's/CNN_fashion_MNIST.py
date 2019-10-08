@@ -20,7 +20,7 @@ X_test = X_test.reshape(X_test.shape[0], 28, 28, 1)
 
 # NORMALIZING INPUTS FROM 0-255 TO 0.0-1.0
 X_train = X_train.astype('float32')
-X_test = X_train.astype('float32')
+X_test = X_test.astype('float32')
 X_train /= 255
 X_test /= 255
 
@@ -84,20 +84,4 @@ classifier.add(Dense(units = 10, activation = 'softmax'))
 classifier.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
  
 # TRAINS THE MODEL ON TRAINING DATA BATCH-BY-BATCH
-classifier.fit(X_train, y_train, batch_size=32, epochs=10, verbose=1)
- 
-# EVALUATION OF THE CREATED MODEL
-score = classifier.evaluate(X_test, y_test, verbose=0)
-print ('test_loss:', score[0])
-print ('test_acc:', score[1])
-
-# PLOTTING OUT THE GRAPH OF VARIOUS LOSSES AND MODEL ACCURACY TO THE NUMBER OF EPOCHS
-plt.figure()
-plt.plot(classifier.history['loss'], label="train_loss")
-plt.plot(classifier.history['val_loss'], label="val_loss")
-plt.plot(classifier.history["acc"], label="train_acc")
-plt.plot(classifier.history["val_acc"], label="val_acc")
-plt.xlabel("Epoch #")
-plt.ylabel("Loss/Accuracy")
-plt.legend()
-plt.show()
+classifier.fit(X_train, y_train, batch_size=32, epochs=10, verbose=1, validation_data = (X_test, y_test))

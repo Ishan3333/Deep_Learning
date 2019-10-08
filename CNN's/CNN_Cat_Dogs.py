@@ -93,10 +93,6 @@ train_datagen = ImageDataGenerator(
 	horizontal_flip=True,
 	vertical_flip = True
 	)
-
-# CREATING AN "ImageDataGenerator" INSTANCE THAT WILL RESCALE THE DATA
-test_datagen = ImageDataGenerator(rescale=1./255)
-
 # CREATING A TRAINING DATASET
 training_set = train_datagen.flow_from_directory(
 	'../dataset/training_set',
@@ -105,6 +101,10 @@ training_set = train_datagen.flow_from_directory(
 	class_mode='binary'
 	)
 
+
+# CREATING AN "ImageDataGenerator" INSTANCE THAT WILL RESCALE THE DATA
+test_datagen = ImageDataGenerator(rescale=1./255)
+
 # CREATING A TESTING DATASET
 test_set = test_datagen.flow_from_directory(
 	'../dataset/test_set',
@@ -112,6 +112,7 @@ test_set = test_datagen.flow_from_directory(
 	batch_size=32,
 	class_mode='binary'
 	)
+
 
 # TRAINS THE MODEL ON DATA GENERATED BATCH-BY-BATCH
 classifier.fit_generator(
@@ -123,14 +124,3 @@ classifier.fit_generator(
 	validation_steps=2000,
 	use_multiprocessing = True
 	)
-
-# PLOTTING OUT THE GRAPH OF VARIOUS LOSSES AND MODEL ACCURACY TO THE NUMBER OF EPOCHS
-plt.figure()
-plt.plot(classifier.history['loss'], label="train_loss")
-plt.plot(classifier.history['val_loss'], label="val_loss")
-plt.plot(classifier.history["acc"], label="train_acc")
-plt.plot(classifier.history["val_acc"], label="val_acc")
-plt.xlabel("Epoch #")
-plt.ylabel("Loss/Accuracy")
-plt.legend()
-plt.show()
