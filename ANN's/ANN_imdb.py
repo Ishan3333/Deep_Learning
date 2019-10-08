@@ -1,4 +1,4 @@
--# IMPORTING ALL THE NECESSARY LIBRARIES
+# IMPORTING ALL THE NECESSARY LIBRARIES
 import numpy as np
 
 from keras.models import Sequential
