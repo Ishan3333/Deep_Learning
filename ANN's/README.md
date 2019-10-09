@@ -28,4 +28,4 @@ __An artificial neuron is a mathematical function representing a model of a biol
 
     7. callback monitoring
 
-4. Reference: ## #TODO
+4. Reference: __#TODO
