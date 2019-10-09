@@ -1,4 +1,8 @@
-# TODO
+# A Primer on ANN's:
+
+Inspired by the Biological Neurons, this novel Mathematical Architecture is at the core of Deep Learning.
+
+![picture alt](http://www.marekrei.com/blog/wp-content/uploads/2014/01/neuron.png)
 
 1. All the examples are performed with various datasets:
 
