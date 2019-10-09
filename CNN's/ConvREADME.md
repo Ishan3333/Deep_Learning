@@ -1,9 +1,6 @@
- # A Primer on CNN's: #
-
+ # A Primer on CNN's:
 
 ![picture alt](https://cdn-images-1.medium.com/max/800/1*u2FJVJpUtXN0IHSelbI94A.jpeg)
-
-
 
 ## There are four main operations in the ConvNet shown above:
 
@@ -25,20 +22,13 @@ ___STEP-4: Classification___
 
 ___Notes___
 
-1. All the examples are performed with different datasets such as:
+1. All the examples are performed with various datasets:
 
-* Mnist
+2. The examples here use Tensorflow as backend for the Keras API
 
-* CIFAR10
+3. Dataset for the example of dog vs cat can be found @ https://sds-platform-private.s3-us-east-2.amazonaws.com/uploads/14_page_p8s40_file_1.zip
 
-* Fashion-Mnist
-
-* CIFAR100
-
-
-2. Dataset for the example of dog vs cat can be found @ https://sds-platform-private.s3-us-east-2.amazonaws.com/uploads/14_page_p8s40_file_1.zip
-
-3. You can tinker around with the things like:
+4. You can tinker around with the things like:
 
     1. number of convolutional layers
 
@@ -61,8 +51,6 @@ ___Notes___
     10. combination of activation functions of different layers
 
     11. callback monitoring
-
-4. The examples here use Tensorflow as backend for the Keras API
 
 5. References in making these examples include:
 
