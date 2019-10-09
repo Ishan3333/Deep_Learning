@@ -20,7 +20,7 @@ ___STEP-4: Classification___
 
 ![picture alt](https://cdn-images-1.medium.com/max/800/1*ocZWgUk2pPHiB6FB2q_5WA.png)
 
-___Notes___
+## Notes
 
 1. All the examples are performed with various datasets:
 
@@ -52,7 +52,7 @@ ___Notes___
 
     11. callback monitoring
 
-5. References in making these examples include:
+## References:
 
     1. https://www.datacamp.com/community/tutorials/convolutional-neural-networks-python#preprocess
 
